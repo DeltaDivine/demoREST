@@ -88,7 +88,7 @@ public class UsersFacadeREST extends AbstractFacade<Users> {
     @Path("checkLogin")
     @Consumes({"application/xml","application/json"})
     public String checkLogin(@QueryParam("username")String username, @QueryParam("password") String password){
-        Users users = (Users) em.createNamedQuery("Users.findByUsernameAndPass")
+        Users users = (Users) em.createNamedQuery("Users.findByNameAndPassword")
                 .setParameter("username", username)
                 .setParameter("password", password)
                 .getSingleResult();
